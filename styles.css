@@ -1,0 +1,128 @@
+/* RESET GENERAL */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #edf2f7;
+  padding: 40px 16px;
+  color: #2d3748;
+}
+
+/* CONTENEDOR PRINCIPAL */
+.container {
+  background-color: #ffffff;
+  padding: 35px 30px;
+  max-width: 750px;
+  margin: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e2e8f0;
+}
+
+/* TITULO */
+.container h1 {
+  font-size: 30px;
+  text-align: center;
+  color: #1a202c;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+/* ETIQUETAS */
+label {
+  display: block;
+  margin-top: 20px;
+  font-weight: 600;
+  color: #2d3748;
+  font-size: 15px;
+}
+
+/* CAMPOS DE TEXTO */
+input,
+textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 6px;
+  font-size: 14px;
+  border: 1px solid #cbd5e0;
+  border-radius: 8px;
+  background-color: #f9fafb;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+input:focus,
+textarea:focus {
+  background-color: #ffffff;
+  border-color: #3182ce;
+  outline: none;
+}
+
+/* BOTONES */
+button {
+  margin-top: 20px;
+  padding: 10px 18px;
+  font-size: 14px;
+  background-color: #3182ce;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+button:hover {
+  background-color: #2b6cb0;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* CAMPOS MULTIPLES DINÁMICOS */
+#experiencias div,
+#educaciones div,
+#proyectos div {
+  margin-top: 10px;
+}
+
+/* FIELDSETS */
+fieldset {
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 15px 20px;
+  margin-top: 20px;
+  background-color: #fefefe;
+}
+
+legend {
+  font-weight: 600;
+  font-size: 15px;
+  color: #2d3748;
+  padding: 0 6px;
+}
+
+/* IMAGEN DE PERFIL */
+#previewFoto {
+  margin-top: 10px;
+  border: 2px solid #cbd5e0;
+  padding: 4px;
+  border-radius: 8px;
+  max-height: 120px;
+  object-fit: cover;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .container {
+    padding: 25px 20px;
+  }
+
+  .container h1 {
+    font-size: 24px;
+  }
+}

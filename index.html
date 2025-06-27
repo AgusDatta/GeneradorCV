@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Generador de CV Online</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script>
+    window.jsPDF = window.jspdf.jsPDF;
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>Generador de Curriculum Vitae</h1>
+    <form id="cvForm" autocomplete="off">
+      
+      <!-- Datos personales -->
+      <label for="nombre">Nombre completo:
+        <input type="text" id="nombre" name="nombre" required/>
+      </label>
+
+      <label for="titulo">Título profesional:
+        <input type="text" id="titulo" name="titulo" required/>
+      </label>
+
+      <label for="ubicacion">Ubicación:
+        <input type="text" id="ubicacion" name="ubicacion" required/>
+      </label>
+
+      <!-- Foto -->
+      <fieldset>
+        <legend>Foto de perfil</legend>
+        <input type="file" id="fotoPerfil" accept="image/*" />
+        <br /><br />
+        <img id="previewFoto" src="" alt="Vista previa" style="max-width: 120px; display: none; border-radius: 6px;" />
+      </fieldset>
+
+      <label for="email">Email:
+        <input type="email" id="email" name="email" required/>
+      </label>
+
+      <label for="telefono">Teléfono:
+        <input type="text" id="telefono" name="telefono"/>
+      </label>
+
+      <label for="perfil">Sobre mí:
+        <textarea id="perfil" name="perfil" rows="5" placeholder="Breve descripción sobre vos, tu experiencia, habilidades, enfoque..."></textarea>
+      </label>
+
+      <!-- Experiencia laboral -->
+    <fieldset>
+        <legend>Experiencia Laboral</legend>
+        <div id="experiencias">
+            <div class="experiencia-entry">
+            <label>Empresa:
+                <input type="text" name="exp_empresa[]"/>
+            </label>
+            <label>Puesto:
+                <input type="text" name="exp_puesto[]"/>
+            </label>
+            <label>Desde:
+                <input type="text" name="exp_desde[]" />
+            </label>
+            <label>Hasta:
+                <input type="text" name="exp_hasta[]" />
+            </label>
+            <label>Descripción:
+                <textarea name="exp_descripcion[]" rows="3" placeholder="Breve descripción de tareas o logros..."></textarea>
+            </label>
+            </div>
+        </div>
+        <button type="button" onclick="agregarExperiencia()">+ Agregar experiencia</button>
+    </fieldset>
+
+      <!-- Educación -->
+    <fieldset>
+        <legend>Educación</legend>
+        <div id="educaciones">
+            <div class="educacion-entry">
+            <label>Institución:
+                <input type="text" name="edu_institucion[]"/>
+            </label>
+            <label>Título:
+                <input type="text" name="edu_titulo[]"/>
+            </label>
+            <label>Desde:
+                <input type="text" name="edu_desde[]" />
+            </label>
+            <label>Hasta:
+                <input type="text" name="edu_hasta[]" />
+            </label>
+            <label>Descripción:
+                <textarea name="edu_descripcion[]" rows="3" placeholder="Breve descripción del plan de estudio o formación..."></textarea>
+            </label>
+            </div>
+        </div>
+        <button type="button" onclick="agregarEducacion()">+ Agregar educación</button>
+    </fieldset>
+
+
+      <!-- Proyectos -->
+    <fieldset>
+        <legend>Proyectos</legend>
+        <div id="proyectos">
+            <div class="proyecto-entry">
+            <label>Título del proyecto:
+                <input type="text" name="proyecto_titulo[]" />
+            </label>
+            <label>Descripción:
+                <textarea name="proyecto_descripcion[]" rows="3" placeholder="Breve descripción del proyecto, tecnologías utilizadas, propósito..."></textarea>
+            </label>
+            </div>
+        </div>
+        <button type="button" onclick="agregarProyecto()">+ Agregar proyecto</button>
+    </fieldset>
+
+
+      <!-- Habilidades -->
+      <label for="habilidades">Habilidades (separadas por coma):
+        <input type="text" id="habilidades" name="habilidades" />
+      </label>
+
+      <br><br>
+      <!-- Botón final -->
+      <button type="submit">Generar PDF</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
