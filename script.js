@@ -95,26 +95,32 @@ function generarPDF(fotoBase64) {
   const telefono = document.getElementById("telefono").value;
   const sobreMi = document.getElementById("perfil").value;
 
-  const experiencias = Array.from(document.querySelectorAll(".experiencia-entry")).map(e => ({
-    empresa: e.querySelector('[name="exp_empresa[]"]').value.trim(),
-    puesto: e.querySelector('[name="exp_puesto[]"]').value.trim(),
-    desde: e.querySelector('[name="exp_desde[]"]').value.trim(),
-    hasta: e.querySelector('[name="exp_hasta[]"]').value.trim(),
-    descripcion: e.querySelector('[name="exp_descripcion[]"]').value.trim(),
-  }));
+  const experiencias = Array.from(document.querySelectorAll(".experiencia-entry"))
+    .map(e => ({
+      empresa: e.querySelector('[name="exp_empresa[]"]').value.trim(),
+      puesto: e.querySelector('[name="exp_puesto[]"]').value.trim(),
+      desde: e.querySelector('[name="exp_desde[]"]').value.trim(),
+      hasta: e.querySelector('[name="exp_hasta[]"]').value.trim(),
+      descripcion: e.querySelector('[name="exp_descripcion[]"]').value.trim(),
+    }))
+    .filter(e => e.empresa || e.puesto || e.descripcion); // evita entradas vacías
 
-  const educaciones = Array.from(document.querySelectorAll(".educacion-entry")).map(e => ({
-    institucion: e.querySelector('[name="edu_institucion[]"]').value.trim(),
-    titulo: e.querySelector('[name="edu_titulo[]"]').value.trim(),
-    desde: e.querySelector('[name="edu_desde[]"]').value.trim(),
-    hasta: e.querySelector('[name="edu_hasta[]"]').value.trim(),
-    descripcion: e.querySelector('[name="edu_descripcion[]"]').value.trim(),
-  }));
+  const educaciones = Array.from(document.querySelectorAll(".educacion-entry"))
+    .map(e => ({
+      institucion: e.querySelector('[name="edu_institucion[]"]').value.trim(),
+      titulo: e.querySelector('[name="edu_titulo[]"]').value.trim(),
+      desde: e.querySelector('[name="edu_desde[]"]').value.trim(),
+      hasta: e.querySelector('[name="edu_hasta[]"]').value.trim(),
+      descripcion: e.querySelector('[name="edu_descripcion[]"]').value.trim(),
+    }))
+    .filter(e => e.institucion || e.titulo || e.descripcion);
 
-  const proyectos = Array.from(document.querySelectorAll(".proyecto-entry")).map(p => ({
-    titulo: p.querySelector('[name="proyecto_titulo[]"]').value.trim(),
-    descripcion: p.querySelector('[name="proyecto_descripcion[]"]').value.trim(),
-  }));
+  const proyectos = Array.from(document.querySelectorAll(".proyecto-entry"))
+    .map(p => ({
+      titulo: p.querySelector('[name="proyecto_titulo[]"]').value.trim(),
+      descripcion: p.querySelector('[name="proyecto_descripcion[]"]').value.trim(),
+    }))
+    .filter(p => p.titulo || p.descripcion);
 
   const habilidades = document.getElementById("habilidades").value.split(',').map(h => h.trim()).filter(h => h);
 
