@@ -5,12 +5,13 @@ Este proyecto es una aplicación web sencilla desarrollada con **HTML**, **CSS**
 ---
 
 ## 📁 Estructura del Proyecto
+```
 agusdatta-generadorcv/
 ├── README.md
 ├── index.html
 ├── script.js
 └── styles.css
-
+```
 ---
 
 ## 🌐 index.html
