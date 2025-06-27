@@ -258,7 +258,7 @@ function generarPDF(fotoBase64) {
       y += 5;
 
       doc.setFont("helvetica", "normal");
-      doc.setFontSize(12);
+      doc.setFontSize(11);
       doc.setTextColor(90);
       const lines = doc.splitTextToSize(proj.descripcion, maxWidth);
       doc.text(lines, margin, y);
@@ -277,7 +277,7 @@ function generarPDF(fotoBase64) {
     y += 6;
 
     doc.setFont("helvetica", "normal");
-    doc.setFontSize(12);
+    doc.setFontSize(11);
     doc.setTextColor(90);
     const habilidadesTexto = habilidades.join(" · ");
     const habilidadesLines = doc.splitTextToSize(habilidadesTexto, maxWidth);
